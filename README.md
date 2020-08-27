@@ -1,11 +1,11 @@
 # Bilibili Python抽奖脚本
 这是一个基于Python3.8的B站评论抽奖的脚本
-1. 确保`Python`为3.0以上
-1. 通过`pip`安装依赖
+* 确保`Python`为3.0以上
+* 安装依赖
 ```bash
 pip install -r requirements.txt -i http://pypi.douban.com/simple/
 ``` 
-1. 首先运行`get_comments.py`并输入对应信息获取评论文件。
+* 运行`get_comments.py`并输入对应信息获取评论文件。
 ```bash
 python get_comments.py
 请输入你的B站id: 711846602
@@ -31,7 +31,7 @@ python get_comments.py
 已获取第18页评论
 数据文件已导出到: result.xlsx
 ```
-1. 运行抽奖程序`get_results.py`并输入提示信息将会持续打印用户名, 按`ctrl+c`终止得到幸运用户。
+* 运行抽奖程序`get_results.py`并输入提示信息将会持续打印用户名, 按`ctrl+c`终止得到幸运用户。
 ```bash
 python get_results.py
 请输入数据文件地址: result.xlsx
