@@ -5,11 +5,11 @@ import time
 import pandas as pd
 
 
-def get_comments(user_id: int, page_num: int):
+def get_comments(av: int, page_num: int):
   dic = {}
   count_page = 1
   for i in range(0, page_num):
-    url = f'https://api.bilibili.com/x/v2/reply?pn={i}&type=1&oid={user_id}&sort=2'
+    url = f'https://api.bilibili.com/x/v2/reply?pn={i}&type=1&oid={av}&sort=2'
     str = requests.get(url=url).text
     dic[i] = json.loads(str)
     print(f'已获取第{count_page}页评论')
@@ -40,12 +40,12 @@ def clean_data(data: dict):
 
 
 def main():
-  user_id = input('请输入你的B站id: ')
-  page_num = input('请输入评论页数: ')
+  av = input('请输入你的抽奖视频av: ')
+  page_num = input('请输入评论总页数: ')
   output_file = input('输出csv文件路径(默认为result.csv): ')
   if not output_file:
     output_file = 'result.csv'
-  data = clean_data(get_comments(int(user_id), int(page_num)))
+  data = clean_data(get_comments(int(av), int(page_num)))
   df = pd.DataFrame(data)
   df.to_csv(output_file)
   print(f'数据文件已导出到: {output_file}')
