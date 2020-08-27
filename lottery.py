@@ -17,7 +17,7 @@ def clean_data(filepath: str, deadline: str):
 	return dfs
 
 
-def lottery():
+def main():
 	# get name list
 	filepath = input('请输入数据文件地址: ')
 	deadline = input('请输入截止时间: ')
@@ -36,4 +36,5 @@ def lottery():
 					f'<<<<<<<<<<<<<<<<<<')
 
 
-lottery()
+if __name__ == '__main__':
+	main()
