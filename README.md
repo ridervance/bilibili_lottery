@@ -19,9 +19,9 @@ python get_comments.py
 已获取第18页评论
 数据文件已导出到: result.csv
 ```
-* 运行抽奖程序`get_results.py`并输入提示信息将会持续打印用户名, 按`ctrl+c`终止得到幸运用户。
+* 运行抽奖程序`lottery.py`并输入提示信息将会持续打印用户名, 按`ctrl+c`终止得到幸运用户。
 ```bash
-python get_results.py
+python lottery.py
 请输入数据文件地址(默认为result.csv):
 请输入截止时间(例如2020-08-18 18:00:00): 2020-08-18 18:00:00
 猫王胖虎
