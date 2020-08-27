@@ -18,7 +18,7 @@ def get_comments(user_id: int, page_num: int):
 
 
 def c_time(timeStamp):
-  tupTime = time.localtime(timeStamp)  # 秒时间戳
+  tupTime = time.localtime(timeStamp)
   stadardTime = time.strftime("%Y-%m-%d %H:%M:%S", tupTime)
   return stadardTime
 
