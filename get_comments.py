@@ -17,13 +17,12 @@ def get_comments(user_id: int, page_num: int):
   return dic
 
 
-def c_time(timeStamp):
-  tupTime = time.localtime(timeStamp)
-  stadardTime = time.strftime("%Y-%m-%d %H:%M:%S", tupTime)
-  return stadardTime
+def c_time(timestamp):
+  comment_time = time.strftime("%Y-%m-%d %H:%M:%S", time.localtime(timestamp))
+  return comment_time
 
 
-def clean_data(data):
+def clean_data(data: dict):
   dic = {
     'name': [],
     'comment': [],
@@ -39,6 +38,7 @@ def clean_data(data):
       dic['time'].append(c_time(info["ctime"]))
   return dic
 
+
 def main():
   user_id = input('请输入你的B站id: ')
   page_num = input('请输入评论页数: ')
@@ -49,4 +49,6 @@ def main():
   print(f'数据文件已导出到: {output_file}')
   return
 
-main()
+
+if __name__ == '__main__':
+    main()
