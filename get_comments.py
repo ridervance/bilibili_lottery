@@ -42,10 +42,12 @@ def clean_data(data: dict):
 def main():
   user_id = input('请输入你的B站id: ')
   page_num = input('请输入评论页数: ')
-  output_file = input('输出excel文件路径: ')
+  output_file = input('输出csv文件路径(默认为result.csv): ')
+  if not output_file:
+    output_file = 'result.csv'
   data = clean_data(get_comments(int(user_id), int(page_num)))
   df = pd.DataFrame(data)
-  df.to_excel(output_file)
+  df.to_csv(output_file)
   print(f'数据文件已导出到: {output_file}')
   return
 
