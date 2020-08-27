@@ -5,7 +5,7 @@ import pandas as pd
 
 
 def clean_data(filepath: str, deadline: str):
-	df = pd.read_excel(filepath)
+	df = pd.read_csv(filepath)
 
 	# drop duplicate 
 	df = df.drop_duplicates(subset=['mid'])
@@ -19,8 +19,10 @@ def clean_data(filepath: str, deadline: str):
 
 def main():
 	# get name list
-	filepath = input('请输入数据文件地址: ')
-	deadline = input('请输入截止时间: ')
+	filepath = input('请输入数据文件地址(默认为result.csv): ')
+	if not filepath:
+		filepath = 'result.csv'
+	deadline = input('请输入截止时间(例如2020-08-18 18:00:00): ')
 	df = clean_data(filepath, deadline)
 	names = df['name'].to_list()
 
